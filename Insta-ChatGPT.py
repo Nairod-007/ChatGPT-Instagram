@@ -7,13 +7,14 @@ from keyboard import read_event
 # Instagram
 cl = Client()
 cl.login('id_account', "mdp_account")
+my_user_id = cl.user_id_from_username("id_account")
 # ChatGPT
 mon_access_token = "access_token"
 chatbot = Chatbot(config={"access_token": mon_access_token})
 print("Connecter !")
 
 
-# -------- (get) Message Insta (send) -> ChatGPT (get for send)-> Message Insta --------
+# -------- (get) Message Insta (send) -> ChatGPT (get response to send)-> Message Insta --------
 
 def chatgpt(message, my_user_id, destinataire):
     if message.user_id != int(my_user_id):
